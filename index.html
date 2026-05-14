@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Oliwier Ozga — Cloud & Automation Engineer. Azure, Terraform, Python, Docker." />
+  <title>Oliwier Ozga · Cloud Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0b0d0f;
+      --surface:   #111416;
+      --surface2:  #181b1e;
+      --border:    #1f2428;
+      --border2:   #2a2f35;
+      --text:      #e6edf3;
+      --muted:     #8b949e;
+      --dim:       #3d444d;
+      --blue:      #58a6ff;
+      --blue-dim:  #1f3a5f;
+      --green:     #3fb950;
+      --green-dim: #1a3a22;
+      --purple:    #bc8cff;
+      --amber:     #d29922;
+      --mono:      'IBM Plex Mono', monospace;
+      --sans:      'Inter', sans-serif;
+      --radius:    8px;
+      --radius-lg: 12px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(11,13,15,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      height: 56px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+      letter-spacing: 0.04em;
+    }
+
+    .nav-links {
+      display: flex; gap: 2rem; list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      color: var(--muted);
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+
+    /* ── SECTIONS ── */
+    section { padding: 6rem 2rem; max-width: 900px; margin: 0 auto; }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center;
+      padding-top: 56px;
+    }
+
+    .hero-tag {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--green);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      display: flex; align-items: center; gap: 8px;
+    }
+
+    .hero-tag::before {
+      content: '';
+      display: inline-block;
+      width: 24px; height: 1px;
+      background: var(--green);
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 span { color: var(--blue); }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 580px;
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+    }
+
+    .hero-actions {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 20px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.15s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: #0b0d0f;
+    }
+
+    .btn-primary:hover { background: #79b8ff; text-decoration: none; color: #0b0d0f; }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border2);
+    }
+
+    .btn-secondary:hover { border-color: var(--muted); text-decoration: none; background: var(--surface); }
+
+    .hero-stats {
+      display: flex; gap: 3rem;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .stat-value {
+      font-family: var(--mono);
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    /* ── SECTION HEADINGS ── */
+    .section-tag {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--blue);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 3rem;
+    }
+
+    /* ── PROJECTS ── */
+    .projects-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      transition: border-color 0.2s, transform 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--accent-color, var(--blue));
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .project-card:hover {
+      border-color: var(--border2);
+      transform: translateY(-2px);
+    }
+
+    .project-card:hover::before { opacity: 1; }
+
+    .project-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .project-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .project-links {
+      display: flex; gap: 0.75rem; flex-shrink: 0;
+    }
+
+    .project-link {
+      font-size: 12px;
+      color: var(--muted);
+      border: 1px solid var(--border2);
+      padding: 4px 10px;
+      border-radius: var(--radius);
+      transition: all 0.15s;
+      white-space: nowrap;
+    }
+
+    .project-link:hover {
+      color: var(--text);
+      border-color: var(--muted);
+      text-decoration: none;
+    }
+
+    .project-link.live {
+      color: var(--green);
+      border-color: var(--green-dim);
+      background: var(--green-dim);
+    }
+
+    .project-link.live:hover { color: #56d364; border-color: #3fb950; }
+
+    .project-desc {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+
+    .project-tags {
+      display: flex; flex-wrap: wrap; gap: 6px;
+    }
+
+    .tag {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    /* ── SKILLS ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .skill-group {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+    }
+
+    .skill-group-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--blue);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .skill-pills {
+      display: flex; flex-wrap: wrap; gap: 6px;
+    }
+
+    .skill-pill {
+      font-size: 13px;
+      color: var(--text);
+      background: var(--surface2);
+      border: 1px solid var(--border2);
+      padding: 4px 10px;
+      border-radius: var(--radius);
+    }
+
+    /* ── CERTS ── */
+    .certs-list {
+      display: flex; flex-direction: column; gap: 1rem;
+    }
+
+    .cert-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .cert-icon {
+      width: 40px; height: 40px;
+      border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .cert-icon.azure { background: #1a3a5f; color: var(--blue); }
+    .cert-icon.google { background: #1a3a22; color: var(--green); }
+    .cert-icon.edu { background: #2a1f4a; color: var(--purple); }
+
+    .cert-name {
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    .cert-meta {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .cert-badge {
+      margin-left: auto;
+      font-family: var(--mono);
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    .badge-progress { background: var(--blue-dim); color: var(--blue); }
+    .badge-done { background: var(--green-dim); color: var(--green); }
+
+    /* ── CONTACT ── */
+    #contact {
+      text-align: center;
+    }
+
+    #contact h2 { margin-bottom: 1rem; }
+
+    .contact-sub {
+      color: var(--muted);
+      max-width: 480px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .contact-links {
+      display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--dim);
+    }
+
+    /* ── SCROLL indicator ── */
+    .scroll-line {
+      width: 1px;
+      height: 60px;
+      background: linear-gradient(to bottom, var(--border2), transparent);
+      margin: 3rem auto 0;
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 1rem; }
+      .nav-links { gap: 1rem; }
+      section { padding: 4rem 1.25rem; }
+      .hero-stats { gap: 2rem; }
+      .project-header { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">oliwier.ozga</span>
+  <ul class="nav-links">
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-tag">Available for work</div>
+  <h1>Cloud &amp; Automation<br /><span>Engineer</span></h1>
+  <p class="hero-sub">
+    Building production-grade infrastructure on Microsoft Azure with Terraform, Python, and Docker.
+    Every project fully deployed, documented, and built to professional standards.
+  </p>
+  <div class="hero-actions">
+    <a href="#projects" class="btn btn-primary">View projects</a>
+    <a href="https://www.linkedin.com/in/oliwier-ozga-380192405/" target="_blank" class="btn btn-secondary">LinkedIn ↗</a>
+    <a href="https://github.com/OliwierOzgaIT" target="_blank" class="btn btn-secondary">GitHub ↗</a>
+  </div>
+  <div class="hero-stats">
+    <div>
+      <div class="stat-value">3</div>
+      <div class="stat-label">Azure projects</div>
+    </div>
+    <div>
+      <div class="stat-value">12</div>
+      <div class="stat-label">Sites monitored live</div>
+    </div>
+    <div>
+      <div class="stat-value">AZ-104</div>
+      <div class="stat-label">In progress</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROJECTS ── -->
+<section id="projects">
+  <div class="section-tag">Portfolio</div>
+  <h2>Projects</h2>
+  <div class="projects-grid">
+
+    <div class="project-card" style="--accent-color: #3fb950;">
+      <div class="project-header">
+        <div class="project-title">Azure Serverless Site Monitor</div>
+        <div class="project-links">
+          <a href="https://stsitemonitordev.z6.web.core.windows.net/" target="_blank" class="project-link live">● Live</a>
+          <a href="https://github.com/OliwierOzgaIT/azure-serverless-monitoring" target="_blank" class="project-link">GitHub ↗</a>
+        </div>
+      </div>
+      <p class="project-desc">
+        Fully serverless uptime monitoring platform checking 12 sites every 5 minutes via Python Azure Functions.
+        Results stored in Table Storage, exposed via REST API, displayed on a live static dashboard hosted on Blob Storage.
+        Email alerts via Logic Apps. All infrastructure provisioned with modular Terraform and remote state.
+      </p>
+      <div class="project-tags">
+        <span class="tag">Azure Functions</span>
+        <span class="tag">Key Vault</span>
+        <span class="tag">Table Storage</span>
+        <span class="tag">Logic Apps</span>
+        <span class="tag">App Insights</span>
+        <span class="tag">Terraform</span>
+        <span class="tag">Python 3.11</span>
+        <span class="tag">GitHub Actions</span>
+      </div>
+    </div>
+
+    <div class="project-card" style="--accent-color: #f85149;">
+      <div class="project-header">
+        <div class="project-title">Chaos Engineering &amp; Resilience Lab</div>
+        <div class="project-links">
+          <a href="https://github.com/OliwierOzgaIT/chaos-engineering-resilience-testing" target="_blank" class="project-link">GitHub ↗</a>
+        </div>
+      </div>
+      <p class="project-desc">
+        Fault injection lab validating system resilience across three layers — CPU saturation (stress-ng, 99.8%),
+        network latency (Pumba, 3000ms injected into Nginx container), and storage exhaustion (fallocate, 95% disk).
+        Deployed on Azure with Terraform. Observed with Azure Monitor and Linux native telemetry.
+      </p>
+      <div class="project-tags">
+        <span class="tag">Azure VM</span>
+        <span class="tag">Docker</span>
+        <span class="tag">Pumba</span>
+        <span class="tag">stress-ng</span>
+        <span class="tag">Terraform</span>
+        <span class="tag">Azure Monitor</span>
+        <span class="tag">NSG</span>
+        <span class="tag">GitHub Actions</span>
+      </div>
+    </div>
+
+    <div class="project-card" style="--accent-color: #58a6ff;">
+      <div class="project-header">
+        <div class="project-title">Elastic Web Applications — VM Scaling Lab</div>
+        <div class="project-links">
+          <a href="https://github.com/OliwierOzgaIT/elastic-web-applications-vm-scaling" target="_blank" class="project-link">GitHub ↗</a>
+        </div>
+      </div>
+      <p class="project-desc">
+        Self-healing, auto-scaling web infrastructure using VM Scale Sets behind an Azure Load Balancer with health probes.
+        IIS deployed via PowerShell extension. Metric-driven autoscale rules via Azure Monitor — scale-out triggered at
+        0.5% CPU threshold. Validated with live stress tests and autoscale run history.
+      </p>
+      <div class="project-tags">
+        <span class="tag">Azure VMSS</span>
+        <span class="tag">Load Balancer</span>
+        <span class="tag">Azure Monitor</span>
+        <span class="tag">App Insights</span>
+        <span class="tag">Terraform</span>
+        <span class="tag">IIS</span>
+        <span class="tag">PowerShell</span>
+        <span class="tag">GitHub Actions</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── SKILLS ── -->
+<section id="skills">
+  <div class="section-tag">Technical</div>
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <div class="skill-group-label">Cloud & Infrastructure</div>
+      <div class="skill-pills">
+        <span class="skill-pill">Microsoft Azure</span>
+        <span class="skill-pill">Azure Functions</span>
+        <span class="skill-pill">VM Scale Sets</span>
+        <span class="skill-pill">Load Balancer</span>
+        <span class="skill-pill">Key Vault</span>
+        <span class="skill-pill">Logic Apps</span>
+        <span class="skill-pill">Table Storage</span>
+        <span class="skill-pill">Blob Storage</span>
+        <span class="skill-pill">App Insights</span>
+        <span class="skill-pill">Azure Monitor</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-label">IaC & Automation</div>
+      <div class="skill-pills">
+        <span class="skill-pill">Terraform</span>
+        <span class="skill-pill">GitHub Actions</span>
+        <span class="skill-pill">Azure CLI</span>
+        <span class="skill-pill">PowerShell</span>
+        <span class="skill-pill">Bash</span>
+        <span class="skill-pill">CI/CD</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-label">Languages</div>
+      <div class="skill-pills">
+        <span class="skill-pill">Python</span>
+        <span class="skill-pill">HCL</span>
+        <span class="skill-pill">SQL</span>
+        <span class="skill-pill">HTML/CSS</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-label">DevOps & Systems</div>
+      <div class="skill-pills">
+        <span class="skill-pill">Docker</span>
+        <span class="skill-pill">Linux (Ubuntu)</span>
+        <span class="skill-pill">Git</span>
+        <span class="skill-pill">Managed Identity</span>
+        <span class="skill-pill">RBAC</span>
+        <span class="skill-pill">NSG</span>
+        <span class="skill-pill">TCP/IP</span>
+        <span class="skill-pill">Active Directory</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="section-tag">Background</div>
+  <h2>About</h2>
+  <div class="certs-list">
+    <div class="cert-card">
+      <div class="cert-icon azure">☁</div>
+      <div>
+        <div class="cert-name">AZ-104: Microsoft Azure Administrator</div>
+        <div class="cert-meta">Microsoft Certification</div>
+      </div>
+      <span class="cert-badge badge-progress">In progress</span>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon google">✓</div>
+      <div>
+        <div class="cert-name">Google Cybersecurity Professional Certificate</div>
+        <div class="cert-meta">Google · 2024</div>
+      </div>
+      <span class="cert-badge badge-done">Completed</span>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon edu">◈</div>
+      <div>
+        <div class="cert-name">IT Technician — INF.02 & INF.03</div>
+        <div class="cert-meta">Zespół Szkół w Tuchowie · 2019–2024 · School Principal's Scholarship</div>
+      </div>
+      <span class="cert-badge badge-done">Graduated</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="section-tag">Get in touch</div>
+  <h2>Let's work together</h2>
+  <p class="contact-sub">
+    I'm actively looking for my first remote Cloud Engineer role.
+    If you're hiring or want to connect, reach out.
+  </p>
+  <div class="contact-links">
+    <a href="mailto:IT_Oliwier_Ozga@proton.me" class="btn btn-primary">Send an email</a>
+    <a href="https://www.linkedin.com/in/oliwier-ozga-380192405/" target="_blank" class="btn btn-secondary">LinkedIn ↗</a>
+    <a href="https://github.com/OliwierOzgaIT" target="_blank" class="btn btn-secondary">GitHub ↗</a>
+  </div>
+</section>
+
+<footer>
+  Built with HTML & CSS · Hosted on GitHub Pages · Oliwier Ozga © 2026
+</footer>
+
+</body>
+</html>

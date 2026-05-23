@@ -213,7 +213,7 @@
       top: 0; left: 0; right: 0;
       height: 2px;
       background: var(--accent-color, var(--blue));
-      opacity: 0;
+      opacity: 1;
       transition: opacity 0.2s;
     }
 
@@ -221,8 +221,6 @@
       border-color: var(--border2);
       transform: translateY(-2px);
     }
-
-    .project-card:hover::before { opacity: 1; }
 
     .project-header {
       display: flex;
@@ -280,9 +278,6 @@
     .tag {
       font-family: var(--mono);
       font-size: 11px;
-      color: var(--muted);
-      background: var(--surface2);
-      border: 1px solid var(--border);
       padding: 3px 8px;
       border-radius: 4px;
     }
@@ -316,9 +311,6 @@
 
     .skill-pill {
       font-size: 13px;
-      color: var(--text);
-      background: var(--surface2);
-      border: 1px solid var(--border2);
       padding: 4px 10px;
       border-radius: var(--radius);
     }
@@ -479,14 +471,14 @@
         Email alerts via Logic Apps. All infrastructure provisioned with modular Terraform and remote state.
       </p>
       <div class="project-tags">
-        <span class="tag">Azure Functions</span>
-        <span class="tag">Key Vault</span>
-        <span class="tag">Table Storage</span>
-        <span class="tag">Logic Apps</span>
-        <span class="tag">App Insights</span>
-        <span class="tag">Terraform</span>
-        <span class="tag">Python 3.11</span>
-        <span class="tag">GitHub Actions</span>
+        <span class="tag" style="background:rgba(0,120,212,0.15);color:#4da8ff;border:1px solid rgba(0,120,212,0.25)">Azure Functions</span>
+        <span class="tag" style="background:rgba(0,120,212,0.15);color:#4da8ff;border:1px solid rgba(0,120,212,0.25)">Key Vault</span>
+        <span class="tag" style="background:rgba(0,120,212,0.15);color:#4da8ff;border:1px solid rgba(0,120,212,0.25)">Table Storage</span>
+        <span class="tag" style="background:rgba(0,120,212,0.15);color:#4da8ff;border:1px solid rgba(0,120,212,0.25)">Logic Apps</span>
+        <span class="tag" style="background:rgba(0,120,212,0.15);color:#4da8ff;border:1px solid rgba(0,120,212,0.25)">App Insights</span>
+        <span class="tag" style="background:rgba(123,94,167,0.15);color:#a78bfa;border:1px solid rgba(123,94,167,0.3)">Terraform</span>
+        <span class="tag" style="background:rgba(55,118,171,0.15);color:#60a5fa;border:1px solid rgba(55,118,171,0.3)">Python 3.11</span>
+        <span class="tag" style="background:rgba(88,96,105,0.18);color:#8b949e;border:1px solid rgba(88,96,105,0.3)">GitHub Actions</span>
       </div>
     </div>
 
@@ -503,14 +495,14 @@
         Deployed on Azure with Terraform. Observed with Azure Monitor and Linux native telemetry.
       </p>
       <div class="project-tags">
-        <span class="tag">Azure VM</span>
-        <span class="tag">Docker</span>
-        <span class="tag">Pumba</span>
-        <span class="tag">stress-ng</span>
-        <span class="tag">Terraform</span>
-        <span class="tag">Azure Monitor</span>
-        <span class="tag">NSG</span>
-        <span class="tag">GitHub Actions</span>
+        <span class="tag" style="background:rgba(0,120,212,0.15);color:#4da8ff;border:1px solid rgba(0,120,212,0.25)">Azure VM</span>
+        <span class="tag" style="background:rgba(13,183,237,0.12);color:#38bdf8;border:1px solid rgba(13,183,237,0.25)">Docker</span>
+        <span class="tag" style="background:rgba(13,183,237,0.12);color:#38bdf8;border:1px solid rgba(13,183,237,0.25)">Pumba</span>
+        <span class="tag" style="background:rgba(200,60,60,0.12);color:#f87171;border:1px solid rgba(200,60,60,0.25)">stress-ng</span>
+        <span class="tag" style="background:rgba(123,94,167,0.15);color:#a78bfa;border:1px solid rgba(123,94,167,0.3)">Terraform</span>
+        <span class="tag" style="background:rgba(0,120,212,0.15);color:#4da8ff;border:1px solid rgba(0,120,212,0.25)">Azure Monitor</span>
+        <span class="tag" style="background:rgba(0,120,212,0.15);color:#4da8ff;border:1px solid rgba(0,120,212,0.25)">NSG</span>
+        <span class="tag" style="background:rgba(88,96,105,0.18);color:#8b949e;border:1px solid rgba(88,96,105,0.3)">GitHub Actions</span>
       </div>
     </div>
 
@@ -527,14 +519,14 @@
         0.5% CPU threshold. Validated with live stress tests and autoscale run history.
       </p>
       <div class="project-tags">
-        <span class="tag">Azure VMSS</span>
-        <span class="tag">Load Balancer</span>
-        <span class="tag">Azure Monitor</span>
-        <span class="tag">App Insights</span>
-        <span class="tag">Terraform</span>
-        <span class="tag">IIS</span>
-        <span class="tag">PowerShell</span>
-        <span class="tag">GitHub Actions</span>
+        <span class="tag" style="background:rgba(0,120,212,0.15);color:#4da8ff;border:1px solid rgba(0,120,212,0.25)">Azure VMSS</span>
+        <span class="tag" style="background:rgba(0,120,212,0.15);color:#4da8ff;border:1px solid rgba(0,120,212,0.25)">Load Balancer</span>
+        <span class="tag" style="background:rgba(0,120,212,0.15);color:#4da8ff;border:1px solid rgba(0,120,212,0.25)">Azure Monitor</span>
+        <span class="tag" style="background:rgba(0,120,212,0.15);color:#4da8ff;border:1px solid rgba(0,120,212,0.25)">App Insights</span>
+        <span class="tag" style="background:rgba(123,94,167,0.15);color:#a78bfa;border:1px solid rgba(123,94,167,0.3)">Terraform</span>
+        <span class="tag" style="background:rgba(100,80,180,0.15);color:#a78bfa;border:1px solid rgba(100,80,180,0.25)">IIS</span>
+        <span class="tag" style="background:rgba(100,80,180,0.15);color:#a78bfa;border:1px solid rgba(100,80,180,0.25)">PowerShell</span>
+        <span class="tag" style="background:rgba(88,96,105,0.18);color:#8b949e;border:1px solid rgba(88,96,105,0.3)">GitHub Actions</span>
       </div>
     </div>
 
@@ -550,12 +542,12 @@
         auto-provisioned dashboards. Custom Docker bridge network, named volumes, and environment-based secret injection.
       </p>
       <div class="project-tags">
-        <span class="tag">Docker</span>
-        <span class="tag">Docker Compose</span>
-        <span class="tag">Prometheus</span>
-        <span class="tag">Grafana</span>
-        <span class="tag">Node Exporter</span>
-        <span class="tag">Linux</span>
+        <span class="tag" style="background:rgba(13,183,237,0.12);color:#38bdf8;border:1px solid rgba(13,183,237,0.25)">Docker</span>
+        <span class="tag" style="background:rgba(13,183,237,0.12);color:#38bdf8;border:1px solid rgba(13,183,237,0.25)">Docker Compose</span>
+        <span class="tag" style="background:rgba(200,60,60,0.12);color:#f87171;border:1px solid rgba(200,60,60,0.25)">Prometheus</span>
+        <span class="tag" style="background:rgba(242,132,13,0.12);color:#f89535;border:1px solid rgba(242,132,13,0.25)">Grafana</span>
+        <span class="tag" style="background:rgba(61,214,140,0.12);color:#3dd68c;border:1px solid rgba(61,214,140,0.25)">Node Exporter</span>
+        <span class="tag" style="background:rgba(252,194,0,0.1);color:#fcd400;border:1px solid rgba(252,194,0,0.2)">Linux</span>
       </div>
     </div>
 
@@ -572,13 +564,13 @@
         NetworkPolicy. Attack simulated via kubectl exec with Falco alerts captured as evidence.
       </p>
       <div class="project-tags">
-        <span class="tag">Kubernetes</span>
-        <span class="tag">Helm</span>
-        <span class="tag">Falco</span>
-        <span class="tag">RBAC</span>
-        <span class="tag">NetworkPolicy</span>
-        <span class="tag">Minikube</span>
-        <span class="tag">Docker</span>
+        <span class="tag" style="background:rgba(50,108,229,0.15);color:#6ba3ff;border:1px solid rgba(50,108,229,0.3)">Kubernetes</span>
+        <span class="tag" style="background:rgba(50,108,229,0.15);color:#6ba3ff;border:1px solid rgba(50,108,229,0.3)">Helm</span>
+        <span class="tag" style="background:rgba(61,214,140,0.12);color:#3dd68c;border:1px solid rgba(61,214,140,0.25)">Falco</span>
+        <span class="tag" style="background:rgba(50,108,229,0.15);color:#6ba3ff;border:1px solid rgba(50,108,229,0.3)">RBAC</span>
+        <span class="tag" style="background:rgba(50,108,229,0.15);color:#6ba3ff;border:1px solid rgba(50,108,229,0.3)">NetworkPolicy</span>
+        <span class="tag" style="background:rgba(50,108,229,0.15);color:#6ba3ff;border:1px solid rgba(50,108,229,0.3)">Minikube</span>
+        <span class="tag" style="background:rgba(13,183,237,0.12);color:#38bdf8;border:1px solid rgba(13,183,237,0.25)">Docker</span>
       </div>
     </div>
 
@@ -593,63 +585,63 @@
     <div class="skill-group">
       <div class="skill-group-label">Cloud &amp; Infrastructure</div>
       <div class="skill-pills">
-        <span class="skill-pill">Microsoft Azure</span>
-        <span class="skill-pill">Azure Functions</span>
-        <span class="skill-pill">VM Scale Sets</span>
-        <span class="skill-pill">Load Balancer</span>
-        <span class="skill-pill">Key Vault</span>
-        <span class="skill-pill">Logic Apps</span>
-        <span class="skill-pill">Table Storage</span>
-        <span class="skill-pill">Blob Storage</span>
-        <span class="skill-pill">App Insights</span>
-        <span class="skill-pill">Azure Monitor</span>
+        <span class="skill-pill" style="background:rgba(0,120,212,0.15);color:#4da8ff;border:1px solid rgba(0,120,212,0.25)">Microsoft Azure</span>
+        <span class="skill-pill" style="background:rgba(0,120,212,0.15);color:#4da8ff;border:1px solid rgba(0,120,212,0.25)">Azure Functions</span>
+        <span class="skill-pill" style="background:rgba(0,120,212,0.15);color:#4da8ff;border:1px solid rgba(0,120,212,0.25)">VM Scale Sets</span>
+        <span class="skill-pill" style="background:rgba(0,120,212,0.15);color:#4da8ff;border:1px solid rgba(0,120,212,0.25)">Load Balancer</span>
+        <span class="skill-pill" style="background:rgba(0,120,212,0.15);color:#4da8ff;border:1px solid rgba(0,120,212,0.25)">Key Vault</span>
+        <span class="skill-pill" style="background:rgba(0,120,212,0.15);color:#4da8ff;border:1px solid rgba(0,120,212,0.25)">Logic Apps</span>
+        <span class="skill-pill" style="background:rgba(0,120,212,0.15);color:#4da8ff;border:1px solid rgba(0,120,212,0.25)">Table Storage</span>
+        <span class="skill-pill" style="background:rgba(0,120,212,0.15);color:#4da8ff;border:1px solid rgba(0,120,212,0.25)">Blob Storage</span>
+        <span class="skill-pill" style="background:rgba(0,120,212,0.15);color:#4da8ff;border:1px solid rgba(0,120,212,0.25)">App Insights</span>
+        <span class="skill-pill" style="background:rgba(0,120,212,0.15);color:#4da8ff;border:1px solid rgba(0,120,212,0.25)">Azure Monitor</span>
       </div>
     </div>
     <div class="skill-group">
       <div class="skill-group-label">IaC &amp; Automation</div>
       <div class="skill-pills">
-        <span class="skill-pill">Terraform</span>
-        <span class="skill-pill">GitHub Actions</span>
-        <span class="skill-pill">Azure CLI</span>
-        <span class="skill-pill">PowerShell</span>
-        <span class="skill-pill">Bash</span>
-        <span class="skill-pill">CI/CD</span>
+        <span class="skill-pill" style="background:rgba(123,94,167,0.15);color:#a78bfa;border:1px solid rgba(123,94,167,0.3)">Terraform</span>
+        <span class="skill-pill" style="background:rgba(88,96,105,0.18);color:#8b949e;border:1px solid rgba(88,96,105,0.3)">GitHub Actions</span>
+        <span class="skill-pill" style="background:rgba(0,120,212,0.15);color:#4da8ff;border:1px solid rgba(0,120,212,0.25)">Azure CLI</span>
+        <span class="skill-pill" style="background:rgba(100,80,180,0.15);color:#a78bfa;border:1px solid rgba(100,80,180,0.25)">PowerShell</span>
+        <span class="skill-pill" style="background:rgba(252,194,0,0.1);color:#fcd400;border:1px solid rgba(252,194,0,0.2)">Bash</span>
+        <span class="skill-pill" style="background:rgba(88,96,105,0.18);color:#8b949e;border:1px solid rgba(88,96,105,0.3)">CI/CD</span>
       </div>
     </div>
     <div class="skill-group">
       <div class="skill-group-label">Languages</div>
       <div class="skill-pills">
-        <span class="skill-pill">Python</span>
-        <span class="skill-pill">HCL</span>
-        <span class="skill-pill">SQL</span>
-        <span class="skill-pill">HTML/CSS</span>
+        <span class="skill-pill" style="background:rgba(55,118,171,0.15);color:#60a5fa;border:1px solid rgba(55,118,171,0.3)">Python</span>
+        <span class="skill-pill" style="background:rgba(123,94,167,0.15);color:#a78bfa;border:1px solid rgba(123,94,167,0.3)">HCL</span>
+        <span class="skill-pill" style="background:rgba(255,165,0,0.1);color:#fb923c;border:1px solid rgba(255,165,0,0.2)">SQL</span>
+        <span class="skill-pill" style="background:rgba(241,101,41,0.12);color:#fb7a3c;border:1px solid rgba(241,101,41,0.25)">HTML/CSS</span>
       </div>
     </div>
     <div class="skill-group">
       <div class="skill-group-label">DevOps &amp; Systems</div>
       <div class="skill-pills">
-        <span class="skill-pill">Docker</span>
-        <span class="skill-pill">Kubernetes</span>
-        <span class="skill-pill">Helm</span>
-        <span class="skill-pill">Falco</span>
-        <span class="skill-pill">Minikube</span>
-        <span class="skill-pill">Linux (Ubuntu)</span>
-        <span class="skill-pill">Git</span>
-        <span class="skill-pill">Managed Identity</span>
-        <span class="skill-pill">RBAC</span>
-        <span class="skill-pill">NSG</span>
-        <span class="skill-pill">TCP/IP</span>
-        <span class="skill-pill">Active Directory</span>
+        <span class="skill-pill" style="background:rgba(13,183,237,0.12);color:#38bdf8;border:1px solid rgba(13,183,237,0.25)">Docker</span>
+        <span class="skill-pill" style="background:rgba(50,108,229,0.15);color:#6ba3ff;border:1px solid rgba(50,108,229,0.3)">Kubernetes</span>
+        <span class="skill-pill" style="background:rgba(50,108,229,0.15);color:#6ba3ff;border:1px solid rgba(50,108,229,0.3)">Helm</span>
+        <span class="skill-pill" style="background:rgba(61,214,140,0.12);color:#3dd68c;border:1px solid rgba(61,214,140,0.25)">Falco</span>
+        <span class="skill-pill" style="background:rgba(50,108,229,0.15);color:#6ba3ff;border:1px solid rgba(50,108,229,0.3)">Minikube</span>
+        <span class="skill-pill" style="background:rgba(252,194,0,0.1);color:#fcd400;border:1px solid rgba(252,194,0,0.2)">Linux (Ubuntu)</span>
+        <span class="skill-pill" style="background:rgba(255,255,255,0.05);color:#9090a8;border:1px solid rgba(255,255,255,0.1)">Git</span>
+        <span class="skill-pill" style="background:rgba(61,214,140,0.1);color:#3dd68c;border:1px solid rgba(61,214,140,0.2)">Managed Identity</span>
+        <span class="skill-pill" style="background:rgba(50,108,229,0.15);color:#6ba3ff;border:1px solid rgba(50,108,229,0.3)">RBAC</span>
+        <span class="skill-pill" style="background:rgba(0,120,212,0.15);color:#4da8ff;border:1px solid rgba(0,120,212,0.25)">NSG</span>
+        <span class="skill-pill" style="background:rgba(255,255,255,0.05);color:#9090a8;border:1px solid rgba(255,255,255,0.1)">TCP/IP</span>
+        <span class="skill-pill" style="background:rgba(0,120,212,0.1);color:#60a5fa;border:1px solid rgba(0,120,212,0.2)">Active Directory</span>
       </div>
     </div>
     <div class="skill-group">
       <div class="skill-group-label">Security</div>
       <div class="skill-pills">
-        <span class="skill-pill">Google Cybersecurity Cert</span>
-        <span class="skill-pill">SIEM</span>
-        <span class="skill-pill">Threat Analysis</span>
-        <span class="skill-pill">Falco</span>
-        <span class="skill-pill">RBAC</span>
+        <span class="skill-pill" style="background:rgba(61,214,140,0.1);color:#3dd68c;border:1px solid rgba(61,214,140,0.2)">Google Cybersecurity Cert</span>
+        <span class="skill-pill" style="background:rgba(61,214,140,0.1);color:#3dd68c;border:1px solid rgba(61,214,140,0.2)">SIEM</span>
+        <span class="skill-pill" style="background:rgba(61,214,140,0.1);color:#3dd68c;border:1px solid rgba(61,214,140,0.2)">Threat Analysis</span>
+        <span class="skill-pill" style="background:rgba(61,214,140,0.12);color:#3dd68c;border:1px solid rgba(61,214,140,0.25)">Falco</span>
+        <span class="skill-pill" style="background:rgba(50,108,229,0.15);color:#6ba3ff;border:1px solid rgba(50,108,229,0.3)">RBAC</span>
       </div>
     </div>
   </div>

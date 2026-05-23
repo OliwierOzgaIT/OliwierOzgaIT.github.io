@@ -407,9 +407,19 @@
       .hero-stats { gap: 2rem; flex-wrap: wrap; }
       .project-header { flex-direction: column; }
     }
+    @keyframes b1{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.08)}66%{transform:translate(-20px,20px) scale(0.95)}}
+    @keyframes b2{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(-30px,40px) scale(0.92)}66%{transform:translate(30px,-20px) scale(1.06)}}
+    @keyframes b3{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(20px,30px) scale(1.04)}66%{transform:translate(-40px,-10px) scale(0.97)}}
+    .blob{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0}
+    .b1{width:500px;height:500px;top:-100px;left:-50px;background:rgba(79,142,247,0.1);animation:b1 14s ease-in-out infinite}
+    .b2{width:600px;height:400px;top:50px;right:-150px;background:rgba(123,94,167,0.09);animation:b2 17s ease-in-out infinite}
+    .b3{width:400px;height:500px;bottom:-50px;left:35%;background:rgba(61,214,140,0.06);animation:b3 11s ease-in-out infinite}
   </style>
 </head>
 <body>
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
 
 <nav>
   <span class="nav-logo">oliwier.ozga</span>
